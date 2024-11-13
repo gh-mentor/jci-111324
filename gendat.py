@@ -27,6 +27,26 @@ Examples:
 """
 
 def gendatapoints(x_range):
+    """
+    Generate a DataFrame of random data points.
+
+    This function generates 100 random data points within the specified range,
+    adds some noise to the data, and returns a pandas DataFrame sorted by the 'x' values.
+
+    Parameters:
+    x_range (tuple): A tuple of two integers specifying the range (inclusive) 
+                     within which to generate the random 'x' values. The first 
+                     integer should be less than the second integer.
+
+    Returns:
+    pandas.DataFrame: A DataFrame with two columns 'x' and 'y', where 'x' contains 
+                      the generated random integers and 'y' contains the corresponding 
+                      values with added noise.
+
+    Raises:
+    ValueError: If x_range is not a tuple of two integers or if the first integer 
+                is not less than the second integer.
+    """
     # Check if x_range is a tuple of two integers
     if not isinstance(x_range, tuple) or len(x_range) != 2 or not all(isinstance(i, int) for i in x_range):
         raise ValueError("x_range should be a tuple of two integers")
